@@ -1,0 +1,579 @@
+
+CSS: Cajas flexibles (flexbox)
+
+Home Principio de la página
+
+En esta lección se comentan las propiedades CSS definidas en la futura recomendación CSS Flexible Box Layout Module Level 1. Aunque actualmente (marzo de 2023) esta recomendación no está formalmente aprobada, se considera parte de la definición oficial de CSS en CSS Snapshot 2023.
+
+Estas propiedades permiten utilizar un nuevo tipo de modelo de caja en el que varios elementos seguidos pueden colocarse unos tras otros en dirección horizontal o vertical y unificar su tamaño.
+
+La dirección en la que se van ordenando los elementos se llama dirección principal. Una vez agotado el espacio, los elementos se pueden ir ordenando en la dirección perpendicular a la dirección principal, que se llama dirección secundaria.
+
+El orden y dirección de los elementos flexibles (de izquierda a derecha o de derecha a izquierda, de arriba abajo o de abajo arriba) son los mismos que las direcciones de escritura. Para simplificar la redacción, en esta lección se supone que la dirección de escritura es la tradicional en Occidente, es decir, la dirección principal es de izquierda a derecha y la dirección secundaria es de arriba abajo.
+
+La etiqueta que agrupa los elementos flexibles se llama contenedor flexible, mientras que los elementos incluidos en un contenedor flexible se llaman elementos flexibles.
+Tipos de cajas flexibles: flex y inline-flex
+
+flex, inline-flex
+Recomendación CSS3 Mozilla Developer Network
+
+Existen dos tipos de contenedores flexibles: de bloque y en-línea.
+
+La propiedad display permite definir el tipo de contenedor flexible:
+
+    flex: el contenedor se comporta como un bloque, es decir, ocupa todo el espacio horizontal disponible
+
+    div { display: flex; margin-bottom: 5px; background-color: #eee; }
+
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    inline-flex: el contenedor se comporta como un elemento en-línea (ocupa sólo el espacio horizontal necesario y pueden colocarse unos detrás de otros en la misma línea)
+
+    div { display: inline-flex; margin-bottom: 5px; background-color: #eee; }
+
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+
+Dirección de los elementos flexibles: flex-direction
+
+flex-direction
+Recomendación CSS3 Mozilla Developer Network
+
+La propiedad flex-direction define la dirección principal, es decir, la dirección en la que se colocan los elementos flexibles en los contenedores.
+
+Los posibles valores de la propiedad flex-direction son:
+
+    row: los elementos se colocan horizontalmente de izquierda a derecha.
+
+    div { display: flex; flex-direction: row; }
+
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    row-reverse: los elementos se colocan horizontalmente de derecha a izquierda.
+
+    div { display: flex; flex-direction: row-reverse; }
+
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    column: los elementos se colocan verticalmente de arriba abajo.
+
+    div { display: flex; flex-direction: column; }
+
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    column-reverse: los elementos se colocan verticalmente de abajo arriba.
+
+    div { display: flex; flex-direction: column-reverse; }
+
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+
+Ajuste de línea de los elementos flexibles: flex-wrap
+
+flex-wrap
+Recomendación CSS3 Mozilla Developer Network
+
+La propiedad flex-wrap establece si los elementos se colocan en una sola línea o en varias.
+
+Los posibles valores de la propiedad flex-wrap son:
+
+    no-wrap: los elementos se colocan en una sola línea.
+
+    div { display: flex; flex-wrap: no-wrap; }
+
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    wrap: los elementos se colocan en varias líneas si no caben en una sola línea.
+
+    div { display: flex; flex-wrap: wrap; }
+
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    wrap-reverse: los elementos se colocan en varias líneas si no caben en una sola línea, pero las líneas se muestran de abajo arriba.
+
+    div { display: flex; flex-wrap: wrap-reverse; }
+
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+
+La propiedad compuesta flex-flow
+
+flex-flow
+Recomendación CSS3 Mozilla Developer Network
+
+La propiedad compuesta flex-flow permite establecer simultáneamente las dos propiedades flex-direction y flex-wrap.
+
+div { display: flex; flex-flow: row-reverse wrap; }
+
+p { width: 100px; border: black 1px solid; margin: 2px; }
+
+Enlace externo
+
+Como no hay ambigüedad, el orden de los valores de flex-direction y flex-wrap no es importante.
+
+div { display: flex; flex-flow: wrap row-reverse; }
+
+p { width: 100px; border: black 1px solid; margin: 2px; }
+
+Enlace externo
+Orden de los elementos flexibles: order
+
+order
+Recomendación CSS3 Mozilla Developer Network
+
+Los elementos flexibles se muestran en el mismo orden en el que se encuentran en el código fuente de la página web, pero la propiedad order permite cambiar ese orden. A la propiedad order se le pueden dan valores enteros positivos o negativos. El valor predeterminado de un elemento es 0.
+
+En el ejemplo siguiente se ha dado la clase "primero" al cuarto párrafo, por lo que este se muestra en primer lugar.
+
+div { display: flex; }
+
+p { width: 100px; border: black 1px solid; margin: 2px; }
+
+p.primero { order: -1; }
+
+Enlace externo
+
+Si varios elementos flexibles tienen el mismo valor de la propiedad order, se muestran en el mismo orden en que se encuentran en el código fuente.
+
+En el ejemplo siguiente se ha dado la clase "primero" al segundo y al cuarto párrafo párrafo, por lo que estos se muestran en primer lugar. El segundo se muestra antes que el cuarto porque el segundo está antes en el código fuente de la página web.
+
+div { display: flex; }
+
+p { width: 100px; border: black 1px solid; margin: 2px; }
+
+p.primero { order: -1; }
+
+Enlace externo
+Tamaño inicial de los elementos flexibles: flex-basis
+
+flex-basis
+Recomendación CSS3 Mozilla Developer Network
+
+El tamaño de los elementos flexibles viene determinado en principio por su contenido. Si hay espacio suficiente en la dirección principal, los elementos se ensanchan para mostrar todo su contenido en una sola línea:
+
+div { display: flex; }
+
+p { border: black 1px solid; margin: 2px; }
+
+Enlace externo
+
+Si no hay espacio suficiente en la dirección principal, el espacio disponible se distribuye de forma desigual entre todos los elementos, dando más espacio a los elementos con más contenido, de manera que el tamaño en la dirección secundaria sea el menor posible:
+
+div { display: flex; }
+
+p { border: black 1px solid; margin: 2px; }
+
+Enlace externo
+
+La propiedad flex-basis establece el tamaño inicial del elemento, antes de que se reparta en su caso el espacio libre.
+
+Los posibles valores de la propiedad flex-basis son:
+
+    content: el tamaño inicial viene determinado por el contenido del elemento.
+    auto: el tamaño inicial viene determinado por las propiedades width y/o height.
+    tamaño: indica el tamaño inicial exacto.
+
+div { display: flex; }
+
+p { flex-basis: 120px; border: black 1px solid; margin: 2px; }
+
+Enlace externo
+
+div { display: flex; }
+
+p { flex-basis: 20%; border: black 1px solid; margin: 2px; }
+
+Enlace externo
+Factor de expansión de los elementos flexibles: flex-grow
+
+flex-grow
+Recomendación CSS3 Mozilla Developer Network
+
+La propiedad flex-grow hace que los elementos crezcan hasta ocupar todo el espacio disponible en la dirección principal.
+
+La propiedad flex-grow toma valores enteros que indican la proporción en que se reparte el espacio.
+
+Si todos los elementos toman el mismo valor, el espacio se reparte a partes iguales.
+
+div { display: flex; }
+
+p { flex-grow: 1; border: black 1px solid; margin: 2px; }
+
+Enlace externo
+
+Si hay valores distintos, el espacio se reparte de forma proporcional a esos valores
+
+div { display: flex; }
+
+p { flex-grow: 1; border: black 1px solid; margin: 2px; }
+
+p.mayor { flex-grow: 2; }
+
+Enlace externo
+Factor de compresión de los elementos flexibles: flex-shrink
+
+flex-shrink
+Recomendación CSS3 Mozilla Developer Network
+
+La propiedad flex-shrink, que toma valores enteros, indica la proporción en que se estrechan los elementos cuando su contenido no cabe en el espacio disponible en en la dirección principal.
+
+Si todos los elementos toman el mismo valor, el espacio se reparte a partes iguales.
+
+div { display: flex; }
+
+p { flex-shrink: 1; border: black 1px solid; margin: 2px; }
+
+Enlace externo
+
+Si hay valores distintos, la reducción es proporcional a esos valores (cuanto mayor es el valor, más se reduce el elemento).
+
+div { display: flex; }
+
+p { flex-shrink: 1; border: black 1px solid; margin: 2px; }
+
+p.menor { flex-shrink: 2; }
+
+Enlace externo
+La propiedad compuesta flex
+
+flex
+Recomendación CSS3 Mozilla Developer Network
+
+La propiedad compuesta flex permite establecer simultáneamente las tres propiedades flex-grow, flex-shrink y flex-basis. Como puede haber ambigüedad, los valores se interpretan en ese orden.
+
+Se recomienda utilizar la propiedad compuesta flex en vez de las propiedades específicas flex-grow, flex-shrink y flex-basis, para asegurar que se definen las tres propiedades.
+
+La propiedad compuesta flex admite cuatro valores básicos, que corresponden a los usos más comunes de las cajas flexibles:
+
+    initial
+
+    El valor flex: initial es equivalente a flex: 0 1 auto. Así, el tamaño inicial de los elementos depende de su contenido (o de las propiedades width y height que se puedan aplicar a los elementos), los elementos no crecen si hay espacio libre, pero se estrechan si no hay espacio suficiente, de manera que el tamaño vertical final sea lo más reducido posible.
+
+    div { display: flex; }
+
+    p { flex: initial; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+
+    div { display: flex; }
+
+    p { flex: initial; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    auto
+
+    El valor flex: auto es equivalente a flex: 1 1 auto. Así, el tamaño inicial de los elementos depende de su contenido (o de las propiedades width y height que se puedan aplicar a los elementos), pero los elementos crecen de manera uniforme si hay espacio libre y se estrechan si no hay espacio suficiente, de manera que el tamaño vertical final sea lo más reducido posible.
+
+    div { display: flex; }
+
+    p { flex: auto; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+
+    div { display: flex; }
+
+    p { flex: auto; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    none
+
+    El valor flex: none es equivalente a flex: 0 0 auto. Así, el tamaño inicial de los elementos depende de su contenido (o de las propiedades width y height que se puedan aplicar a los elementos), y los elementos ni crecen si hay espacio libre ni se estrechan si no hay espacio suficiente.
+
+    div { display: flex; }
+
+    p { flex: none; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+
+    div { display: flex; }
+
+    p { flex: none; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    número
+
+    El valor flex: número es equivalente a flex: número 1 0. Así, el tamaño inicial de los elementos es proporcional al número indicado, y los elementos crecen de forma uniforme si hay espacio libre y se estrechan de forma uniforme si no hay espacio suficiente.
+
+    div { display: flex; }
+
+    p { flex: 1; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+
+    div { display: flex; }
+
+    p { flex: 1; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+
+Márgenes automáticos en los elementos flexibles: margin: auto
+
+margin
+Recomendación CSS3 Mozilla Developer Network
+
+Con la propiedad margin con el valor auto, se asigna todo el espacio disponible al lado correspondiente.
+
+En el ejemplo siguiente se asigna la clase "derecha" al cuarto párrafo, por lo que el espacio disponible se asigna a su lado izquierdo y el cuarto párrafo queda completamente alineado a la derecha:
+
+div { display: flex; }
+
+p { border: black 1px solid; margin: 2px; }
+
+p.derecha { margin-left: auto; }
+
+Enlace externo
+
+En el ejemplo siguiente se asigna la clase "derecha" al tercer párrafo, por lo que el espacio disponible se asigna a su lado izquierdo y el tercer y cuarto párrafo quedan completamente alineados a la derecha:
+
+div { display: flex; }
+
+p { flex-grow: 1; border: black 1px solid; margin: 2px; }
+
+p.derecha { margin-left: auto; }
+
+Enlace externo
+
+En el ejemplo siguiente se asigna la clase "derecha" al segundo y al cuarto párrafo, por lo que el espacio disponible se reparte en los lados izquierdos del segundo y cuarto párrafo, quedando repartidos los párrafos en tres grupos:
+
+div { display: flex; }
+
+p { flex-grow: 1; border: black 1px solid; margin: 2px; }
+
+p.derecha { margin-left: auto; }
+
+Enlace externo
+Alineación en la dirección principal: justify-content
+
+justify-content
+Recomendación CSS3 Mozilla Developer Network
+
+La propiedad justify-content establece la forma en que se reparte el espacio libre disponible en la dirección principal.
+
+Los posibles valores de la propiedad justify-content son:
+
+    flex-start: los elementos se sitúan al principio de la dirección principal, es decir, el espacio disponible se sitúa al final.
+
+    div { display: flex; justify-content: flex-start; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    flex-end: los elementos se sitúan al final de la dirección principal, es decir, el espacio disponible se sitúa al principio.
+
+    div { display: flex; justify-content: flex-end; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    center: los elementos se sitúan en el centro de la dirección principal, es decir, el espacio disponible se reparte entre el principio y el final.
+
+    div { display: flex; justify-content: center; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    space-between: el espacio disponible se reparte entre los elementos.
+
+    div { display: flex; justify-content: space-between; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    space-around: el espacio disponible se reparte entre los elementos y en los extremos.
+
+    div { display: flex; justify-content: space-around; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+
+Alineación en la dirección secundaria (una línea): align-items
+
+align-items
+Recomendación CSS3 Mozilla Developer Network
+
+La propiedad align-items establece la forma en que se alinean los elementos en la dirección secundaria.
+
+Los posibles valores de la propiedad align-items son:
+
+    flex-start: los elementos se sitúan al principio de la dirección secundaria (es decir, arriba si la dirección secundaria es vertical).
+
+    div { display: flex; align-items: flex-start; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    flex-end: los elementos se sitúan al final de la dirección secundaria (es decir, abajo si la dirección secundaria es vertical).
+
+    div { display: flex; align-items: flex-end; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    center: los elementos se sitúan en el centro de la dirección secundaria (es decir, en medio si la dirección secundaria es vertical).
+
+    div { display: flex; align-items: center; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    stretch: todos los elementos toman el mismo tamaño en la dirección secundaria.
+
+    div { display: flex; align-items: stretch; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    baseline: los elementos se alinean en la dirección secundaria según la primera línea de texto. Para distinguirlo del valor flex-start, en el último párrafo del ejemplo siguiente se ha aumentado el tamaño del texto.
+
+    div { display: flex; align-items: baseline; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+
+Alineación individual en la dirección secundaria: align-self
+
+align-self
+Recomendación CSS3 Mozilla Developer Network
+
+La propiedad align-self permite que un elemento tenga una alineación en la dirección secundaria distinta de la establecida con align-items.
+
+Los posibles valores de la propiedad align-self son los mismos que los de la propiedad align-items:
+
+    flex-start: el elemento se sitúa al principio de la dirección secundaria (es decir, arriba si la dirección secundaria es vertical).
+
+    div { display: flex; align-items: flex-end; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    p.especial { align-self: flex-start; border-color: blue; }
+
+    Enlace externo
+    flex-end: el elemento se sitúa al final de la dirección secundaria (es decir, abajo si la dirección secundaria es vertical).
+
+    div { display: flex; align-items: flex-start; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    p.especial { align-self: flex-end; border-color: blue; }
+
+    Enlace externo
+    center: el elemento se sitúa en el centro de la dirección secundaria (es decir, en medio si la dirección secundaria es vertical).
+
+    div { display: flex; align-items: flex-start; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    p.especial { align-self: center; border-color: blue; }
+
+    Enlace externo
+    stretch: el elemento toma el tamaño del mayor elemento en la dirección secundaria.
+
+    div { display: flex; align-items: flex-start; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    p.especial { align-self: stretch; border-color: blue; }
+
+    Enlace externo
+    baseline: los elementos se alinean en la dirección secundaria según la primera línea de texto. Para distinguirlo del valor flex-start, la propiedad se ha aplicado a dos párrafos y en uno de ellos se ha aumentado el tamaño del texto.
+
+    div { display: flex; align-items: flex-start; }
+
+    p { border: black 1px solid; margin: 2px; }
+
+    p.especial { align-self: baseline; border-color: blue; }
+
+    Enlace externo
+
+Alineación en la dirección secundaria (varias líneas): align-content
+
+align-content
+Recomendación CSS3 Mozilla Developer Network
+
+La propiedad align-content establece la manera en que se reparte el espacio sobrante en la dirección secundaria.
+
+Normalmente, el espacio ocupado en la dirección secundaria por un elemento flexible depende de su contenido, por lo que no suele haber espacio sobrante. Por ello, en los ejemplos siguientes el espacio disponible en la dirección secundaria se ha establecido con la propiedad height, de manera que haya espacio sobrante.
+
+Los posibles valores de la propiedad align-content son:
+
+    flex-start: los elementos se sitúan al principio de la dirección secundaria, es decir, el espacio disponible se sitúa al final. .
+
+    div { display: flex; height: 10em;
+      flex-wrap: wrap; align-content: flex-start;
+      background-color:#eee;
+    }
+
+    p { width: 200px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    flex-end: los elementos se sitúan al final de la dirección secundaria, es decir, el espacio disponible se sitúa al principio.
+
+    div { display: flex; height: 10em;
+      flex-wrap: wrap; align-content: flex-end;
+      background-color:#eee;
+    }
+
+    p { width: 200px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    center: los elementos se sitúan en el centro de la dirección secundaria, es decir, el espacio disponible se reparte entre el principio y el final.
+
+    div { display: flex; height: 10em;
+      flex-wrap: wrap; align-content: center;
+      background-color:#eee;
+    }
+
+    p { width: 200px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    space-between: el espacio disponible se reparte entre los elementos.
+
+    div { display: flex; height: 10em;
+      flex-wrap: wrap; align-content: space-between;
+      background-color:#eee;
+    }
+
+    p { width: 200px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    space-around: el espacio disponible se reparte entre los elementos y en los extremos.
+
+    div { display: flex; height: 10em;
+      flex-wrap: wrap; align-content: space-around;
+      background-color:#eee;
+    }
+
+    p { width: 200px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    stretch: los elementos aumentan su tamaño en la dirección secundaria de manera que ocupan todo el espacio disponible
+
+    div { display: flex; height: 10em;
+      flex-wrap: wrap; align-content: stretch;
+      background-color:#eee;
+    }
+
+    p { width: 200px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+
+Otros
+
+Los navegadores no interpretan de una forma uniforme los porcentajes de los márgenes margin y padding en la dirección vertical. En diciembre de 2017, el grupo de trabajo del W3C ha hecho un llamamiento a la comunidad para tomar una decisión, participando en la issue 2085.
+
+Última modificación de esta página: 1 de marzo de 2023
+
+Licencia Creative Commons
+Esta página forma parte del curso Páginas web HTML y hojas de estilo CSS por Bartolomé Sintes Marco
+que se distribuye bajo una Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0).
