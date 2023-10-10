@@ -1,0 +1,37 @@
+
+CSS: Cajas flexibles (flexbox)
+
+Home Principio de la página
+
+En esta lección se comentan las propiedades CSS definidas en la futura recomendación CSS Flexible Box Layout Module Level 1. Aunque actualmente (marzo de 2023) esta recomendación no está formalmente aprobada, se considera parte de la definición oficial de CSS en CSS Snapshot 2023.
+
+Estas propiedades permiten utilizar un nuevo tipo de modelo de caja en el que varios elementos seguidos pueden colocarse unos tras otros en dirección horizontal o vertical y unificar su tamaño.
+
+La dirección en la que se van ordenando los elementos se llama dirección principal. Una vez agotado el espacio, los elementos se pueden ir ordenando en la dirección perpendicular a la dirección principal, que se llama dirección secundaria.
+
+El orden y dirección de los elementos flexibles (de izquierda a derecha o de derecha a izquierda, de arriba abajo o de abajo arriba) son los mismos que las direcciones de escritura. Para simplificar la redacción, en esta lección se supone que la dirección de escritura es la tradicional en Occidente, es decir, la dirección principal es de izquierda a derecha y la dirección secundaria es de arriba abajo.
+
+La etiqueta que agrupa los elementos flexibles se llama contenedor flexible, mientras que los elementos incluidos en un contenedor flexible se llaman elementos flexibles.
+Tipos de cajas flexibles: flex y inline-flex
+
+flex, inline-flex
+Recomendación CSS3 Mozilla Developer Network
+
+Existen dos tipos de contenedores flexibles: de bloque y en-línea.
+
+La propiedad display permite definir el tipo de contenedor flexible:
+
+    flex: el contenedor se comporta como un bloque, es decir, ocupa todo el espacio horizontal disponible
+
+    div { display: flex; margin-bottom: 5px; background-color: #eee; }
+
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
+    inline-flex: el contenedor se comporta como un elemento en-línea (ocupa sólo el espacio horizontal necesario y pueden colocarse unos detrás de otros en la misma línea)
+
+    div { display: inline-flex; margin-bottom: 5px; background-color: #eee; }
+
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+
+    Enlace externo
