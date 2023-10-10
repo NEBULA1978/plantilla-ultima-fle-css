@@ -28,10 +28,8 @@ generar_html() {
   # Contador de líneas
   local contador=0
 
-  # Inicializar una variable para almacenar el contenido HTML
-  local contenido_html=""
-
-  # Leer el archivo de texto línea por línea y agregar líneas al contenido HTML
+  # Leer el archivo de texto línea por línea y almacenar líneas en un array
+  local lineas=()
   while IFS= read -r linea
   do
     contador=$((contador+1))
@@ -39,16 +37,24 @@ generar_html() {
     # Verificar si la línea está dentro del rango especificado
     if [ $contador -ge $primera_linea ] && [ $contador -le $ultima_linea ]; then
       if [ -n "$linea" ]; then  # Ignorar líneas en blanco
-        # Agregar la línea al contenido HTML
-        contenido_html+="$linea"
+        lineas+=("$linea")
       fi
     fi
   done < "$archivo_menu"
 
-  # Escribir el contenido HTML en el archivo
-  echo "$contenido_html" > "$archivo_html"
+  # Leer el contenido actual del archivo HTML
+  contenido_actual=$(<"$archivo_html")
 
-  echo "Menú HTML generado en $archivo_html"
+  # Insertar las líneas en la línea 9 del contenido HTML
+  for ((i=${#lineas[@]}-1; i>=0; i--))
+  do
+    contenido_actual=$(sed -e "9i${lineas[i]}" <<< "$contenido_actual")
+  done
+
+  # Escribir el contenido actualizado en el archivo HTML
+  echo "$contenido_actual" > "$archivo_html"
+
+  echo "Líneas insertadas en la línea 9 de $archivo_html"
 }
 
 # Solicitar al usuario el número de la primera línea
