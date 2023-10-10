@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Nombre del archivo de texto
-archivo_menu="menu2.txt"
+archivo_menu="apuntesgrid.txt"
 
 # Función para mostrar el archivo con líneas numeradas
 mostrar_archivo_numerado() {
