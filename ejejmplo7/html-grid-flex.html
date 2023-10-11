@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Flexbox</title>
+    <style>
+        /* Estilos generales */
+        .example {
+            display: flex;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .item {
+            border: 1px solid #333;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        /* Establece un grid para organizar los ejemplos */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Organiza en 4 columnas */
+            gap: 20px; /* Espacio entre elementos */
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div id="example1" class="example">
+            <!-- ... Ejemplo 1 contenido ... -->
+        </div>
+        <div id="example2" class="example">
+            <!-- ... Ejemplo 2 contenido ... -->
+        </div>
+        <div id="example3" class="example">
+            <!-- ... Ejemplo 3 contenido ... -->
+        </div>
+        <!-- Repite para los otros ejemplos -->
+    </div>
+</body>
+</html>
