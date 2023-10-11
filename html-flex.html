@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejemplos de Flexbox</title>
+        <style>
+        /* Estilos generales */
+        .example {
+            display: flex;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .item {
+            border: 1px solid #333;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        /* Ejemplo 1: Dirección Principal Horizontal */
+        #example1 {
+            flex-direction: row;
+        }
+
+        /* Ejemplo 2: Dirección Principal Horizontal Invertida */
+        #example2 {
+            flex-direction: row-reverse;
+        }
+
+        /* Ejemplo 3: Dirección Principal Vertical */
+        #example3 {
+            flex-direction: column;
+        }
+
+        /* Ejemplo 4: Dirección Principal Vertical Invertida */
+        #example4 {
+            flex-direction: column-reverse;
+        }
+
+        /* Ejemplo 5: Ajuste de Línea Única */
+        #example5 {
+            flex-wrap: nowrap;
+        }
+
+        /* Ejemplo 6: Ajuste de Múltiples Líneas */
+        #example6 {
+            flex-wrap: wrap;
+        }
+
+        /* Ejemplo 7: Ajuste de Múltiples Líneas Invertido */
+        #example7 {
+            flex-wrap: wrap-reverse;
+        }
+
+        /* Ejemplo 8: Propiedad Compuesta Flex Flow */
+        #example8 {
+            flex-flow: row wrap;
+        }
+
+        /* Ejemplo 9: Cambio de Orden de Elementos */
+        #example9 {
+            /* Puedes usar la propiedad "order" para cambiar el orden de los elementos flexibles */
+            display: flex;
+        }
+
+        /* Ejemplo 10: Tamaño Inicial por Contenido */
+        #example10 {
+            /* Puedes usar "flex-basis: content;" para que el tamaño inicial dependa del contenido */
+        }
+
+        /* Ejemplo 11: Tamaño Inicial por Ancho Fijo */
+        #example11 {
+            /* Puedes usar "flex-basis" con un valor específico para establecer un tamaño inicial exacto */
+        }
+
+        /* Ejemplo 12: Factor de Expansión Uniforme */
+        #example12 {
+            /* Puedes usar "flex-grow" para que todos los elementos crezcan de manera uniforme */
+        }
+
+        /* Ejemplo 13: Factor de Expansión Proporcional */
+        #example13 {
+            /* Puedes usar "flex-grow" con valores diferentes para repartir espacio de manera proporcional */
+        }
+
+        /* Ejemplo 14: Factor de Compresión Uniforme */
+        #example14 {
+            /* Puedes usar "flex-shrink" para que todos los elementos se estrechen de manera uniforme */
+        }
+
+        /* Ejemplo 15: Factor de Compresión Proporcional */
+        #example15 {
+            /* Puedes usar "flex-shrink" con valores diferentes para reducir elementos de manera proporcional */
+        }
+
+        /* Ejemplo 16: Propiedad Compuesta Flex */
+        #example16 {
+            /* Puedes usar la propiedad "flex" para definir flex-grow, flex-shrink y flex-basis en un solo lugar */
+        }
+
+        /* Ejemplo 17: Márgenes Automáticos */
+        #example17 {
+            /* Puedes usar "margin: auto;" para alinear elementos flexibles a la derecha */
+            justify-content: space-between;
+        }
+
+        /* Ejemplo 18: Alineación en la Dirección Principal */
+        #example18 {
+            justify-content: center;
+        }
+
+        /* Ejemplo 19: Alineación en la Dirección Secundaria (Una Línea) */
+        #example19 {
+            align-items: flex-end;
+        }
+
+        /* Ejemplo 20: Alineación Individual en la Dirección Secundaria */
+        #example20 {
+            /* Puedes usar "align-self" para cambiar la alineación de un elemento en la dirección secundaria */
+        }
+    </style>
+    </head>
+    <body>
+        <div id="example1" class="example">
+            <h1>Ejemplo 1: Dirección Principal Horizontal</h1>
+            <div class="item">Element 1</div>
+            <div class="item">Element 2</div>
+            <div class="item">Element 3</div>
+        </div>
+
+        <div id="example2" class="example">
+            <h1>Ejemplo 2: Dirección Principal Horizontal Invertida</h1>
+            <div class="item">Element 1</div>
+            <div class="item">Element 2</div>
+            <div class="item">Element 3</div>
+        </div>
+
+        <div id="example3" class="example">
+            <h1>Ejemplo 3: Dirección Principal Vertical</h1>
+            <div class="item">Element 1</div>
+            <div class="item">Element 2</div>
+            <div class="item">Element 3</div>
+        </div>
+
+        <div id="example4" class="example">
+            <h1>Ejemplo 4: Dirección Principal Vertical Invertida</h1>
+            <div class="item">Element 1</div>
+            <div class="item">Element 2</div>
+            <div class="item">Element 3</div>
+        </div>
+
+        <div id="example5" class="example">
+            <h1>Ejemplo 5: Ajuste de Línea Única</h1>
+            <div class="item">Element 1</div>
+            <div class="item">Element 2</div>
+            <div class="item">Element 3</div>
+        </div>
+
+        <div id="example6" class="example">
+            <h1>Ejemplo 6: Ajuste de Múltiples Líneas</h1>
+            <div class="item">Element 1</div>
+            <div class="item">Element 2</div>
+            <div class="item">Element 3</div>
+        </div>
+
+        <div id="example7" class="example">
+            <h1>Ejemplo 7: Ajuste de Múltiples Líneas Invertido</h1>
+            <div class="item">Element 1</div>
+            <div class="item">Element 2</div>
+            <div class="item">Element 3</div>
+        </div>
+
+        <div id="example8" class="example">
+            <h1>Ejemplo 8: Propiedad Compuesta Flex Flow</h1>
+            <!-- Agregado el cierre de etiqueta </h1> -->
+            <div class="item">Element 1</div>
+            <div class="item">Element 2</div>
+            <div class="item">Element 3</div>
+        </div>
+
+        <div id="example9" class="example">
+            <h1>Ejemplo 9: Cambio de Orden de Elementos</h1>
+            <div class="item" style="order: 3;">Element 1</div>
+            <div class="item" style="order: 1;">Element 2</div>
+            <div class="item" style="order: 2;">Element 3</div>
+        </div>
+
+        <div id="example10" class="example">
+            <h1>Ejemplo 10: Tamaño Inicial por Contenido</h1>
+            <div class="item" style="flex-basis: content;">Element 1 Element 1
+                Element 1</div>
+            <div class="item" style="flex-basis: content;">Element 2</div>
+            <div class="item" style="flex-basis: content;">Element 3 Element 3</div>
+        </div>
+
+        <div id="example11" class="example">
+            <h1>Ejemplo 11: Tamaño Inicial por Ancho Fijo</h1>
+            <div class="item" style="flex-basis: 100px;">Element 1</div>
+            <div class="item" style="flex-basis: 150px;">Element 2</div>
+            <div class="item" style="flex-basis: 80px;">Element 3</div>
+        </div>
+
+        <div id="example12" class="example">
+            <h1>Ejemplo 12: Factor de Expansión Uniforme</h1>
+            <div class="item" style="flex-grow: 1;">Element 1</div>
+            <div class="item" style="flex-grow: 1;">Element 2</div>
+            <div class="item" style="flex-grow: 1;">Element 3</div>
+        </div>
+
+        <div id="example13" class "example">
+            <h1>Ejemplo 13: Factor de Expansión Proporcional</h1>
+            <div class="item" style="flex-grow: 2;">Element 1</div>
+            <div class="item" style="flex-grow: 3;">Element 2</div>
+            <div class="item" style="flex-grow: 1;">Element 3</div>
+        </div>
+
+        <div id="example14" class="example">
+            <h1>Ejemplo 14: Factor de Compresión Uniforme</h1>
+            <div class="item" style="flex-shrink: 1;">Element 1</div>
+            <div class="item" style="flex-shrink: 1;">Element 2</div>
+            <div class="item" style="flex-shrink: 1;">Element 3</div>
+        </div>
+
+        <div id="example15" class="example">
+            <h1>Ejemplo 15: Factor de Compresión Proporcional</h1>
+            <div class="item" style="flex-shrink: 2;">Element 1</div>
+            <div class="item" style="flex-shrink: 3;">Element 2</div>
+            <div class="item" style="flex-shrink: 1;">Element 3</div>
+        </div>
+
+        <div id="example16" class="example">
+            <h1>Ejemplo 16: Propiedad Compuesta Flex</h1>
+            <div class="item" style="flex: 1 2 100px;">Element 1</div>
+            <div class="item" style="flex: 1 3 150px;">Element 2</div>
+            <div class="item" style="flex: 1 1 80px;">Element 3</div>
+        </div>
+
+        <div id="example17" class="example">
+            <h1>Ejemplo 17: Márgenes Automáticos</h1>
+            <div class="item" style="margin: auto;">Element 1</div>
+            <div class="item" style="margin: auto;">Element 2</div>
+            <div class="item" style="margin: auto;">Element 3</div>
+        </div>
+
+        <div id="example18" class="example">
+            <h1>Ejemplo 18: Alineación en la Dirección Principal</h1>
+            <div class="item">Element 1</div>
+            <div class="item">Element 2</div>
+            <div class="item">Element 3</div>
+        </div>
+
+        <div id="example19" class="example">
+            <h1>Ejemplo 19: Alineación en la Dirección Secundaria (Una Línea)</h1>
+            <div class="item">Element 1</div>
+            <div class="item">Element 2</div>
+            <div class="item">Element 3</div>
+        </div>
+
+        <div id="example20" class="example">
+            <h1>Ejemplo 20: Alineación Individual en la Dirección Secundaria</h1>
+            <div class="item" style="align-self: flex-start;">Element 1</div>
+            <div class="item" style="align-self: center;">Element 2</div>
+            <div class="item" style="align-self: flex-end;">Element 3</div>
+        </div>
+    </body>
+</html>

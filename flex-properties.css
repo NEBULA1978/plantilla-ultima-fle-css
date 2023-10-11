@@ -1,0 +1,255 @@
+
+/* CSS: Cajas flexibles (flexbox) */
+/* Display Property for Flex Containers */
+div {
+    display: flex;
+    margin-bottom: 5px;
+    background-color: #eee;
+}
+
+div {
+    display: inline-flex;
+    margin-bottom: 5px;
+    background-color: #eee;
+}
+
+/* Direction of Flex Items */
+div {
+    display: flex;
+    flex-direction: row;
+}
+
+div {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* Wrapping of Flex Items */
+div {
+    display: flex;
+    flex-wrap: no-wrap;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+/* Composed Property: flex-flow */
+div {
+    display: flex;
+    flex-flow: row-reverse wrap;
+}
+
+div {
+    display: flex;
+    flex-flow: wrap row-reverse;
+}
+
+/* Order of Flex Items */
+div {
+    display: flex;
+}
+
+p.primero {
+    order: -1;
+}
+
+/* Initial Size of Flex Items */
+div {
+    display: flex;
+}
+
+p {
+    flex-basis: 120px;
+}
+
+/* Flex Grow Property */
+div {
+    display: flex;
+}
+
+p {
+    flex-grow: 1;
+}
+
+p.mayor {
+    flex-grow: 2;
+}
+
+/* Flex Shrink Property */
+div {
+    display: flex;
+}
+
+p {
+    flex-shrink: 1;
+}
+
+p.menor {
+    flex-shrink: 2;
+}
+
+/* Composed Property: flex */
+div {
+    display: flex;
+}
+
+p {
+    flex: 1;
+}
+
+p.especial {
+    flex: 2;
+}
+
+/* Margins in Flex Containers */
+div {
+    display: flex;
+}
+
+p.derecha {
+    margin-left: auto;
+}
+
+/* Justify Content */
+div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+}
+
+div {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Align Items */
+div {
+    display: flex;
+    align-items: flex-start;
+}
+
+div {
+    display: flex;
+    align-items: flex-end;
+}
+
+div {
+    display: flex;
+    align-items: center;
+}
+
+div {
+    display: flex;
+    align-items: stretch;
+}
+
+div {
+    display: flex;
+    align-items: baseline;
+}
+
+/* Align Self */
+div {
+    display: flex;
+}
+
+p.especial {
+    align-self: flex-start;
+}
+
+p.especial {
+    align-self: flex-end;
+}
+
+p.especial {
+    align-self: center;
+}
+
+p.especial {
+    align-self: stretch;
+}
+
+p.especial {
+    align-self: baseline;
+}
+
+/* Align Content */
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: #eee;
+}
+
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    background-color: #eee;
+}
+
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: center;
+    background-color: #eee;
+}
+
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: space-between;
+    background-color: #eee;
+}
+
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: space-around;
+    background-color: #eee;
+}
+
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: stretch;
+    background-color: #eee;
+}
+

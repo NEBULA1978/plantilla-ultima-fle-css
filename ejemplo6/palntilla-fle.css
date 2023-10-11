@@ -1,0 +1,236 @@
+/* Display Property for Flex Containers */
+div {
+    display: flex;
+}
+
+div {
+    display: inline-flex;
+}
+
+/* Setting the Direction of Flex Elements */
+div {
+    display: flex;
+    flex-direction: row;
+}
+
+div {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* Controlling Wrapping of Flex Elements */
+div {
+    display: flex;
+    flex-wrap: no-wrap;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+/* Controlling the Size of Flex Elements */
+div {
+    display: flex;
+    flex-basis: content;
+}
+
+div {
+    display: flex;
+    flex-basis: auto;
+}
+
+div {
+    display: flex;
+    flex-basis: 120px;
+}
+
+div {
+    display: flex;
+    flex-basis: 20%;
+}
+
+/* Controlling Element Growth with flex-grow */
+p {
+    flex-grow: 1;
+}
+
+p {
+    flex-grow: 2;
+}
+
+/* Controlling Element Shrinkage with flex-shrink */
+p {
+    flex-shrink: 1;
+}
+
+p {
+    flex-shrink: 2;
+}
+
+/* Ordering Flex Elements */
+p.primero {
+    order: -1;
+}
+
+/* Alineación en la dirección principal: justify-content */
+div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+}
+
+div {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Alineación en la dirección secundaria (una línea): align-items */
+div {
+    display: flex;
+    align-items: flex-start;
+}
+
+div {
+    display: flex;
+    align-items: flex-end;
+}
+
+div {
+    display: flex;
+    align-items: center;
+}
+
+div {
+    display: flex;
+    align-items: stretch;
+}
+
+div {
+    display: flex;
+    align-items: baseline;
+}
+
+/* Alineación individual en la dirección secundaria: align-self */
+div {
+    display: flex;
+    align-items: flex-end;
+}
+
+div {
+    display: flex;
+    align-items: flex-start;
+}
+
+div {
+    display: flex;
+    align-items: flex-start;
+}
+
+div {
+    display: flex;
+    align-items: flex-start;
+}
+
+div {
+    display: flex;
+    align-items: flex-start;
+}
+
+p.especial {
+    align-self: flex-start;
+}
+
+p.especial {
+    align-self: flex-end;
+}
+
+p.especial {
+    align-self: center;
+}
+
+p.especial {
+    align-self: stretch;
+}
+
+p.especial {
+    align-self: baseline;
+}
+
+/* Alineación en la dirección secundaria (varias líneas): align-content */
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: #eee;
+}
+
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    background-color: #eee;
+}
+
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: center;
+    background-color: #eee;
+}
+
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: space-between;
+    background-color: #eee;
+}
+
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: space-around;
+    background-color: #eee;
+}
+
+div {
+    display: flex;
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: stretch;
+    background-color: #eee;
+}
